@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Gradient Tím -->
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#4c1d95" />
+    </linearGradient>
+
+    <!-- Gradient Cyan -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#083344" />
+    </linearGradient>
+
+    <!-- Hiệu ứng phát sáng Neon -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1" />
+      <feGaussianBlur stdDeviation="20" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Mặt nạ cắt hình lục giác -->
+    <clipPath id="hexClip">
+      <polygon points="250,20 450,135 450,365 250,480 50,365 50,135" />
+    </clipPath>
+  </defs>
+
+  <!-- Nền đen -->
+  <rect width="500" height="500" fill="#05000a" />
+
+  <!-- Vòng lục giác phát sáng ngoài -->
+  <polygon points="250,30 440,140 440,360 250,470 60,360 60,140" 
+           fill="none" stroke="url(#purpleGrad)" stroke-width="6" filter="url(#neonGlow)" />
+
+  <!-- Vòng lục giác bên trong -->
+  <polygon points="250,60 410,150 410,350 250,440 90,350 90,150" 
+           fill="none" stroke="url(#cyanGrad)" stroke-width="3" opacity="0.6"/>
+
+  <!-- Chữ BCK chính giữa -->
+  <g filter="url(#neonGlow)">
+    <!-- Chữ B -->
+    <path d="M150 180 L150 320 L195 320 C215 320 225 310 225 295 C225 280 215 270 200 265 C210 255 215 245 215 235 C215 210 200 195 180 195 L150 195 Z M175 220 L185 220 C195 220 200 225 200 235 C200 245 195 250 185 250 L175 250 Z M175 275 L190 275 C200 275 205 280 205 290 C205 300 200 305 190 305 L175 305 Z" 
+          fill="url(#cyanGrad)" />
+    
+    <!-- Chữ C -->
+    <path d="M280 180 C240 180 240 320 280 320 C300 320 310 305 310 290 L285 290 C285 300 280 305 275 305 C260 305 260 195 275 195 C280 195 285 200 285 210 L310 210 C310 190 300 180 280 180 Z" 
+          fill="url(#purpleGrad)" />
+
+    <!-- Chữ K -->
+    <path d="M330 180 L330 320 L355 320 L355 270 L365 320 L395 320 L375 250 L395 180 L365 180 L355 220 L355 180 Z" 
+          fill="url(#cyanGrad)" />
+  </g>
+
+  <!-- Dòng chữ nhỏ phía dưới -->
+  <text x="250" y="380" font-family="'Orbitron', sans-serif" font-size="20" 
+        font-weight="bold" fill="#c084fc" text-anchor="middle" letter-spacing="8" filter="url(#neonGlow)">
+    B C K  S Y S T E M
+  </text>
+
+  <!-- Các chi tiết trang trí (nét kẻ) -->
+  <line x1="100" y1="400" x2="400" y2="400" stroke="#a855f7" stroke-width="2" opacity="0.5" filter="url(#neonGlow)"/>
+  <circle cx="250" cy="415" r="5" fill="#06b6d4" filter="url(#neonGlow)" />
+  
+</svg>
